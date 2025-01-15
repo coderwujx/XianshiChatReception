@@ -1,18 +1,17 @@
 <template>
 	<view class="friend">
 		<view class="friend-left">
-			<wd-badge show-zero modelValue="0" max="99">
+			<wd-badge :hidden="MessageTip === 0" :modelValue="MessageTip" max="99">
 				<wd-img radius="12" :width="45" :height="45" :src="ListImageSrc" />
 			</wd-badge>
 		</view>
 		<view class="message">
 			<view class="top">
-				<wd-text bold="true" color="black" :text="MessageName" />
-				<wd-text text="12:30" />
+				<wd-text size="36rpx" color="black" :text="MessageName" />
+				<wd-text size="24rpx" :text="MessageTime" />
 			</view>
 			<view class="bottom">
-				<wd-text lines="1"
-					text="芦叶满汀洲，寒沙带浅流。二十年重过南楼。柳下系船犹未稳，能几日，又中秋。黄鹤断矶头，故人曾到否？旧江山浑是新愁。欲买桂花同载酒，终不似，少年游。"></wd-text>
+				<wd-text lines="1" :text="MessageContent" />
 			</view>
 		</view>
 	</view>
@@ -20,10 +19,25 @@
 
 <script setup>
 	const props = defineProps({
-		ListImageSrc: String,
+		ListImageSrc: {
+			type: String,
+			default: ''
+		},
+		MessageTip: {
+			type: Number,
+			default: 0
+		},
 		MessageName: {
 			type: String,
 			default: '名字'
+		},
+		MessageTime: {
+			type: String,
+			default: ''
+		},
+		MessageContent: {
+			type: String,
+			default: ''
 		}
 	});
 </script>

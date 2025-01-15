@@ -24,6 +24,14 @@
 
 <style lang="scss">
 	.top-bar {
+		position: fixed;
+		/* 固定定位 */
+		top: var(--status-bar-height);
+		/* 放置在状态栏下方 */
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		/* 确保顶部栏在最上层 */
 		border-bottom: 1rpx solid $uni-border-color;
 
 		.search {
@@ -33,7 +41,7 @@
 
 		.add {
 			height: 100%;
-			width: 100rpx;
+			width: 75rpx;
 		}
 	}
 </style>
