@@ -1,0 +1,30 @@
+<template>
+	<view class="search">
+		<!-- 状态栏 -->
+		<view class="status-bar" />
+		<wd-transition :show="true" name="fade-left">
+			<TopBar />
+			<SearchUser />
+		</wd-transition>
+	</view>
+</template>
+
+<script setup>
+	import TopBar from '../../components/search/TopBar.vue';
+	import SearchUser from '../../components/search/SearchUser.vue';
+</script>
+
+<style lang="scss">
+	.search {
+		height: 100vh; // 页面高度为视口高度
+		display: flex; // 使用 Flex 布局
+		flex-direction: column; // 垂直排列子元素
+
+		// 状态栏样式
+		.status-bar {
+			height: var(--status-bar-height); // 高度为系统状态栏高度
+			width: 100%; // 宽度占满父容器
+			background-color: #ffffff; // 背景色为白色
+		}
+	}
+</style>

@@ -1,6 +1,7 @@
 <template>
 	<!-- 顶部栏容器 -->
 	<view class="top-bar">
+		<view class="status-bar" />
 		<!-- 导航栏组件 -->
 		<wd-navbar title="贤时即聊">
 			<!-- 左侧插槽：显示头像 -->
@@ -32,8 +33,10 @@
 	});
 
 	const handleSearch = () => {
-		console.log('点击了搜索图标');
-		// 搜索逻辑
+		// 跳转搜索按钮
+		uni.navigateTo({
+			url: '/pages/search/search' // 跳转到登录页面
+		});
 	};
 	const handleAdd = () => {
 		console.log('点击了添加图标');
@@ -44,11 +47,18 @@
 <style lang="scss">
 	.top-bar {
 		position: fixed; // 固定定位
-		top: var(--status-bar-height); // 放置在状态栏下方
+		top: 0; // 放置在状态栏下方
 		left: 0;
 		right: 0;
 		z-index: 1000; // 确保顶部栏在最上层
 		border-bottom: 1rpx solid $uni-border-color; // 底部边框
+
+		.status-bar {
+			width: 100%;
+			height: var(--status-bar-height);
+			background-color: #fff;
+		}
+
 
 		// 搜索图标容器
 		.search {

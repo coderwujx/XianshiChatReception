@@ -1,7 +1,5 @@
 <template>
 	<view class="content">
-		<!-- 固定的状态栏 -->
-		<view class="status-bar" />
 		<wd-transition :show="true" name="fade-left">
 			<!-- 固定的顶部栏 -->
 			<TopBar :leftImageSrc="'/static/images/img/four.png'" />
@@ -28,23 +26,15 @@
 
 <style lang="scss">
 	.content {
-		height: 100vh;
 		display: flex;
 		flex-direction: column;
 	}
 
-	/* 固定的状态栏 */
-	.status-bar {
-		height: var(--status-bar-height);
-		width: 100%;
-		background-color: #ffffff;
-		/* 状态栏背景色 */
-	}
 
 	/* 内容区域 */
 	.scroll-content {
 		flex: 1;
-		padding-top: 100rpx;
+		padding-top: calc(var(--status-bar-height) + 100rpx);
 		/* 顶部栏高度 + 状态栏高度 */
 		box-sizing: border-box;
 		overflow-y: auto;
