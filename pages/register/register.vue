@@ -1,25 +1,22 @@
 <template>
-	<!-- 登录页面容器 -->
-	<view class="login">
+	<view class="register">
 		<!-- 状态栏 -->
 		<view class="status-bar" />
 		<wd-transition :show="true" name="fade-left">
-			<!-- 顶部栏组件 -->
 			<TopBar />
-			<!-- 登录内容组件 -->
-			<LoginContent />
+			<RegisterContent />
 		</wd-transition>
+
 	</view>
 </template>
 
 <script setup>
-	// 导入组件
-	import TopBar from '../../components/login/TopBar.vue'; // 顶部栏组件
-	import LoginContent from '../../components/login/LoginContent.vue'; // 登录内容组件
+	import TopBar from '../../components/register/TopBar.vue';
+	import RegisterContent from '../../components/register/RegisterContent.vue';
 </script>
 
 <style lang="scss">
-	.login {
+	.register {
 		height: 100vh; // 页面高度为视口高度
 		display: flex; // 使用 Flex 布局
 		flex-direction: column; // 垂直排列子元素

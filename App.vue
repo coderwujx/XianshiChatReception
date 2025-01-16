@@ -2,9 +2,6 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
-			uni.redirectTo({
-				url: '/pages/login/login'
-			});
 		},
 		onShow: function() {
 			console.log('App Show')

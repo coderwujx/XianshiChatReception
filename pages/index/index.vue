@@ -2,15 +2,18 @@
 	<view class="content">
 		<!-- 固定的状态栏 -->
 		<view class="status-bar" />
-		<!-- 固定的顶部栏 -->
-		<TopBar :leftImageSrc="'/static/images/img/four.png'" />
-		<!-- 内容区域 -->
-		<scroll-view class="scroll-content" scroll-y>
-			<FriendList :MessageName="'好友申请'" :ListImageSrc="'/static/images/img/apply.png'" />
-			<FriendList v-for="(item, index) in datas.friends()" :key="index"
-				:ListImageSrc="'/static/images/img/' + item.imgurl" :MessageTip="item.tip" :MessageName="item.name"
-				:MessageTime="formatTime(item.time)" :MessageContent="item.messages" />
-		</scroll-view>
+		<wd-transition :show="true" name="fade-left">
+			<!-- 固定的顶部栏 -->
+			<TopBar :leftImageSrc="'/static/images/img/four.png'" />
+			<!-- 内容区域 -->
+			<scroll-view class="scroll-content" scroll-y>
+				<FriendList :MessageName="'好友申请'" :ListImageSrc="'/static/images/img/apply.png'" />
+				<FriendList v-for="(item, index) in datas.friends()" :key="index"
+					:ListImageSrc="'/static/images/img/' + item.imgurl" :MessageTip="item.tip" :MessageName="item.name"
+					:MessageTime="formatTime(item.time)" :MessageContent="item.messages" />
+			</scroll-view>
+		</wd-transition>
+
 	</view>
 </template>
 
