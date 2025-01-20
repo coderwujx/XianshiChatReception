@@ -14,8 +14,8 @@
 <script setup>
 	// 处理返回按钮点击事件
 	const handleBack = () => {
-		uni.navigateTo({
-			url: '/pages/login/login' // 跳转到登录页面
+		uni.navigateBack({
+			delta: 1
 		});
 	};
 </script>

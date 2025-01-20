@@ -18,8 +18,8 @@
 	const keyword = ref("")
 	//点击左侧按钮返回首页
 	const handleLeft = () => {
-		uni.navigateTo({
-			url: '/pages/index/index' // 跳转到登录页面
+		uni.navigateBack({
+			delta: 1
 		});
 	}
 </script>
